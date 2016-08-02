@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- =========   Bootstrap 4 Alpha CSS   ========= -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/site.css" >
+  </head>
+  <body>
+    <div>
+      <article id="wrapper" class="text-xs-center">
+        <!-- <header>
+          <h1 class="text-xs-center m-t-3">Home Movie Database</h1>
+          <div id="movie_srch_wrap" class="p-t-2 p-b-2">
+            <nav id="movie_genre_btn" class="container">
+              <ul>
+                <li class="genre_btn"><a href="#">All</a></li>
+                <li class="genre_btn"><a href="#">Comedy</a></li>
+                <li class="genre_btn"><a href="#">Action</a></li>
+                <li class="genre_btn"><a href="#">Drama</a></li>
+                <li class="genre_btn"><a href="#">Suspense</a></li>
+                <li class="genre_btn"><a href="#">Animation</a></li>
+                <li class="genre_btn"><a href="#">Adventure</a></li>
+                <li class="genre_btn"><a href="#">Classic</a></li>
+              </ul>
+            </nav>
+            <input type="text" id="search" ng-model="vm.movie.title" placeholder=" Search For A Movie" value=""><br>
+            <label for="search"></label><br>
+            <button type="button" id="add_movie_btn" data-toggle="modal" data-target="#myModal" ui-sref="Add_Movie"> Add Movie</button>
+          </div>
+        </header> -->
+        <!-- <section id="movie_category">
+          <ul>
+            <li><a href="#A">A</a></li>
+            <li><a href="#B">B</a></li>
+            <li><a href="#C">C</a></li>
+            <li><a href="#D">D</a></li>
+            <li><a href="#E">E</a></li>
+            <li><a href="#F">F</a></li>
+            <li><a href="#G">G</a></li>
+            <li><a href="#H">H</a></li>
+            <li><a href="#I">I</a></li>
+            <li><a href="#J">J</a></li>
+            <li><a href="#K">K</a></li>
+            <li><a href="#L">L</a></li>
+            <li><a href="#M">M</a></li>
+            <li><a href="#N">N</a></li>
+            <li><a href="#O">O</a></li>
+            <li><a href="#P">P</a></li>
+            <li><a href="#Q">Q</a></li>
+            <li><a href="#R">R</a></li>
+            <li><a href="#S">S</a></li>
+            <li><a href="#T">T</a></li>
+            <li><a href="#U">U</a></li>
+            <li><a href="#V">V</a></li>
+            <li><a href="#W">W</a></li>
+            <li><a href="#X">X</a></li>
+            <li><a href="#Y">Y</a></li>
+            <li><a href="#Z">Z</a></li>
+          </ul> -->
+          <h1>Home Media Collection</h1>
+  <h2>An Example of a Front-End JavaScript Home Movie Colletion App</h2>
+  <p>This app supports the following operations:</p>
+  <menu>
+    <li><a href="../listMovies.html"><button type="button">
+      List all movies
+    </button></a></li>
+    <li><a href="../AddMovie.html"><button type="button">
+      Add a new movie
+    </button></a></li>
+    <li><a href="../updateMovie.html"><button type="button">
+      Update a movie
+    </button></a></li>
+    <li><a href="../deleteMovie.html"><button type="button">
+      Delete a movie
+    </button></a></li>
+    <li><button type="button" onclick="Movie.clearData()">
+      Clear database
+    </button></li>
+    <li><button type="button" onclick="Movie.createTestData()">
+      Import Media
+    </button></li>
+  </menu>
+
+
+        </section>
+        <!-- <script src="javascript/Movie_DB.js" charset="utf-8"></script> -->
+        <section id="main_display" class="container-fluid m-t-3 p-t-2">
+
+        <div class="container-fluid">
+          <div id="cat"></div>
+          <ul id="Movies" class="row">
+            <div id="act"></div>
+
+          </ul>
+        </div>
+        <script src="model/Movie.js" charset="utf-8"></script>
+
+        </section>
+
+      </article>
+    </div>	<!-- End of MainController -->
+
+  </body>
+</html>

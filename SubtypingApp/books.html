@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Subtyping Example App: Manage Books</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.3.0/base-min.css&pure/0.3.0/forms-min.css" />
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+  </head>
+  <body>
+<!-- ======================================================= -->
+  <div id="manageBooks">
+<!-- ======================================================= -->
+    <h1 class="t-a-c">Public Library: Manage books, including textbooks and biographies</h1><hr>
+    <menu>
+      <li><button class="bTn br-1 bg-inverse"type="button" onclick="pl.view.books.list.setupUserInterface()">List all books</button></li>
+      <li><button class="bTn br-1 bg-inverse" type="button" onclick="pl.view.books.create.setupUserInterface()">Add a new book</button></li>
+      <li><button class="bTn br-1 bg-inverse" type="button" onclick="pl.view.books.update.setupUserInterface()">Update a book record</button></li>
+      <li><button class="bTn br-1 bg-inverse" type="button" onclick="pl.view.books.destroy.setupUserInterface()">Delete a book record</button></li>
+    </menu>
+    <footer class="p-x-1"><a href="index.html"><button type="button"class="bTn" name="button">Back to Main menu</button></a></footer>
+  </div>
+<!-- ======================================================= -->
+  <div id="listBooks">
+<!-- ======================================================= -->
+    <h1 class="t-a-c">Public Library: List all books</h1><hr>
+    <table id="books">
+      <thead><tr><th>ISBN</th><th>Title</th><th>Year</th><th>Special type</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <footer><button type="button" class="btn"onclick="pl.view.books.manage.refreshUI()">Back to "Manage books" menu</button></footer>
+  </div>
+<!-- ======================================================= -->
+  <div id="createBook">
+<!-- ======================================================= -->
+    <h1  class="t-a-c">Public Library: Create a new book record</h1><hr>
+    <form id="createBookForm" class="pure-form pure-form-aligned">
+      <p class="pure-control-group">
+        <label for="creISBN">ISBN: </label><input id="creISBN" name="isbn" /></p>
+      <p class="pure-control-group">
+        <label for="creTitle">Title: </label><input id="creTitle" name="title" /></p>
+      <p class="pure-control-group">
+        <label for="creYear">Year: </label><input id="creYear" name="year" /></p>
+      <p class="pure-control-group">
+        <label for="creBookType">Special type: </label>
+        <select id="creBookType" name="subtype"></select>
+      </p>
+      <p class="pure-control-group Textbook">
+        <label for="creSubjectArea">Subject area: </label><input id="creSubjectArea" name="subjectArea" />
+      </p>
+      <p class="pure-control-group Biography">
+        <label for="creAbout">About: </label><input id="creAbout" name="about" />
+      </p>
+      <p class="pure-controls">
+        <button type="submit" class="btn bTn"name="commit">Save</button>
+        <button type="button" class="btn bTn"onclick="pl.view.books.manage.refreshUI()">Back to menu</button>
+      </p>
+    </form>
+  </div>
+<!-- ======================================================= -->
+  <div id="updateBook">
+<!-- ======================================================= -->
+    <h1 class="t-a-c">Public Library: Update a book record</h1><hr>
+    <form id="updateBookForm" class="pure-form pure-form-aligned">
+      <p class="pure-control-group">
+        <label for="updBookSelectBook">Select book: </label>
+        <select id="updBookSelectBook" name="selectBook"></select>
+      </p>
+      <p class="pure-control-group">
+        <label for="updISBN">ISBN: </label><input id="updISBN" name="isbn" disabled="disabled"/></p>
+      <p class="pure-control-group">
+        <label for="updTitle">Title: </label><input id="updTitle" name="title" /></p>
+      <p class="pure-control-group">
+        <label for="updYear">Year: </label><input id="updYear" name="year" /></p>
+      <p class="pure-control-group">
+        <label for="updBookType">Special type: </label>
+        <select id="updBookType" name="subtype"></select>
+      </p>
+      <p class="pure-control-group Textbook">
+        <label for="updTitle">Subject area: </label><input id="updSubjectArea" name="subjectArea" />
+      </p>
+      <p class="pure-control-group Biography">
+        <label for="updTitle">About: </label><input id="updAbout" name="about" />
+      </p>
+      <p class="pure-controls">
+        <button class="btn bTn"type="submit" name="commit">Save changes</button>
+        <button class="btn bTn"type="button" onclick="pl.view.books.manage.refreshUI()">Back to menu</button>
+      </p>
+    </form>
+  </div>
+<!-- ======================================================= -->
+  <div id="deleteBook">
+<!-- ======================================================= -->
+    <h1 class="t-a-c">Public Library: Delete a book record</h1><hr>
+    <form id="deleteBookForm" class="pure-form pure-form-aligned">
+      <p class="pure-control-group">
+        <label for="delBookSelectBook">Select book: </label>
+        <select id="delBookSelectBook" name="selectBook"></select>
+      </p>
+      <p class="pure-controls">
+        <button class="btn bTn" type="button" name="commit">Delete</button>
+        <button class="btn bTn" type="button" onclick="pl.view.books.manage.refreshUI()">Back to menu</button>
+      </p>
+    </form>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="css/tether-1.3.1/dist/js/tether.min.js" ></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+  <script src="lib/browserShims.js"></script>
+  <script src="lib/util.js"></script>
+  <script src="src/model/errorTypes.js"></script>
+  <script src="src/model/Book.js"></script>
+  <script src="src/ctrl/app.js"></script>
+  <script src="src/view/app.js"></script>
+  <script src="src/view/books.js"></script>
+  <script src="src/ctrl/books.js"></script>
+  <script>
+    window.addEventListener("load", pl.ctrl.books.manage.initialize);
+  </script>
+  </body>
+</html>

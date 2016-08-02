@@ -1,0 +1,6 @@
+li {list-style: none;}
+.br-1 {border-radius: 1em;}
+.t-a-c {text-align: center;}
+.tb {font-weight: bold;}
+.bTn {width: 150px; margin:.15em; transition:all .3s ease;}
+.bTn:hover{background:#aaa; color:#000; font-weight:bold;}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" vocab="http://schema.org/" typeof="WebApplication">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Subtyping Example App</title>
+    <meta property="browserRequirements" content="requires HTML5 support" />
+    <meta property="storageRequirements" content="Local Storage of browser" />
+    <meta property="countriesSupported" content="en" />
+    <meta property="applicationCategory" content="Data management" />
+    <meta property="creator" content="Micah Dunson" /> <!-- should be a Person object instead of text -->
+    <!-- =========   Bootstrap 4 Alpha CSS   ========= -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css" />
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+  </head>
+  <body>
+    <article class="container p-t-1">
+      <header class="bg-primary p-a-3 br-1">
+        <h1 class="t-a-c">Enhanced Validated Public Library</h1>
+        <h2 class="t-a-c">An Example of a Validated JavaScript Front-End App Using localStorage</h2>
+      </header>
+      <menu>
+        <li><a href="books.html"><button class="bTn br-1 bg-inverse"type="button">Manage books</button></a></li>
+        <li><a href="authors.html"><button class="bTn br-1 bg-inverse"type="button">Manage authors</button></a></li>
+        <li><a href="employees.html"><button class="bTn br-1 bg-inverse"type="button">Manage employees</button></a></li>
+        <li><button class="bTn br-1 bg-inverse"type="button" onclick="pl.ctrl.app.createTestData()">Create test data</button></li>
+        <li><button class="bTn br-1 bg-inverse"type="button" onclick="pl.ctrl.app.clearData()">Clear data</button>
+      </menu>
+    	<p>The app supports the four standard data management operations
+        (<strong>C</strong>reate/<strong>R</strong>ead/<strong>U</strong>pdate/<strong>D</strong>elete).
+    	For playing with the app, you may first want to <button type="button" onclick="pl.ctrl.app.createTestData()">Create
+    	test data</button> and then view it (e.g. by choosing "Manage books" and then "List all books").</p>
+      <p>This example app takes care of two class hierarchies:
+        <ul>
+        <li>The simple segmentation of <code>Book</code> into <code>TextBook</code> and <code>Biography</code>.</li>
+        <li>The segmentation of <code>Person</code> into <code>Author</code> and <code>Employee</code> such
+        that <code>Employee</code> has a further segment, <code>Manager</code>.</li>
+        </ul>
+
+        <footer style="font-size: small;">
+          <hr />
+        <div>Copyright © 2016 Micah Dunson,
+    </article>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="css/tether-1.3.1/dist/js/tether.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <script src="lib/browserShims.js"></script>
+    <script src="lib/util.js"></script>
+    <script src="src/ctrl/app.js"></script>
+    <script src="src/model/errorTypes.js"></script>
+    <script src="src/model/Book.js"></script>
+    <script src="src/model/Person.js"></script>
+    <script src="src/model/Employee.js"></script>
+    <script src="src/model/Author.js"></script>
+  </body>
+</html>

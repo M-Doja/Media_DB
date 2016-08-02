@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Subtyping Example App: Manage Authors</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.5.0/base-min.css&pure/0.5.0/forms-min.css" />
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+  </head>
+  <body>
+<!-- ======================================================= -->
+  <div id="manageAuthors">
+<!-- ======================================================= -->
+    <h1 class="t-a-c">Manage authors</h1><hr>
+    <menu>
+      <li><button class=" br-1 bg-inverse" type="button" onclick="pl.view.authors.list.setupUserInterface()">List all authors</button></li>
+      <li><button class=" br-1 bg-inverse" type="button" onclick="pl.view.authors.create.setupUserInterface()">Add a new author</button></li>
+      <li><button class=" br-1 bg-inverse" type="button" onclick="pl.view.authors.update.setupUserInterface()">Update an author record</button></li>
+      <li><button class=" br-1 bg-inverse" type="button" onclick="pl.view.authors.destroy.setupUserInterface()">Delete an author record</button></li>
+    </menu>
+    <footer class="p-x-1"><a href="index.html"><button type="button" class="bTn">Back to Main menu</button></a></footer>
+  </div>
+<!-- ======================================================= -->
+  <div id="listAuthors">
+<!-- ======================================================= -->
+    <h1 class="t-a-c">List all authors</h1><hr>
+    <table id="authors">
+      <thead><tr><th>ID</th><th>Name</th><th>Bio</th></thead>
+      <tbody></tbody>
+    </table>
+    <footer><button class=" bTn"type="button" onclick="pl.view.authors.manage.refreshUI()">Back to "Manage authors" menu</button></footer>
+  </div>
+<!-- ======================================================= -->
+  <div id="createAuthor">
+<!-- ======================================================= -->
+    <h1 class="t-a-c">Create a new author record</h1><hr>
+    <form id="createAuthorForm" class="pure-form pure-form-aligned">
+      <div class="pure-control-group">
+        <label for="crePersonId">ID: </label><input id="crePersonId" name="personId" />
+      </div>
+      <div class="pure-control-group">
+        <label for="creName">Name: </label><input id="creName" name="name" />
+      </div>
+      <div class="pure-control-group">
+        <label for="creBiography">Biography: </label>
+        <textarea id="creBiography" name="biography"></textarea>
+      </div>
+      <div class="pure-controls">
+        <p><button class="btn bTn" type="submit" name="commit">Save</button>
+           <button class="btn bTn" type="button" onclick="pl.view.authors.manage.refreshUI()">Back to menu</button></p>
+      </div>
+    </form>
+  </div>
+<!-- ======================================================= -->
+  <div id="updateAuthor">
+<!-- ======================================================= -->
+    <h1 class="t-a-c">Update an author record</h1><hr>
+    <form id="updateAuthorForm" class="pure-form pure-form-aligned">
+      <div class="pure-control-group">
+        <label for="updAuthorSelectAuthor">Select author: </label>
+        <select id="updAuthorSelectAuthor" name="selectAuthor"><option value=""> --- </option></select>
+      </div>
+      <div class="pure-control-group">
+        <label for="updAuthorId">ID: </label><input id="updAuthorId" name="personId" disabled="disabled" />
+      </div>
+      <div class="pure-control-group">
+        <label for="updName">Name: </label><input id="updName" name="name" />
+      </div>
+      <div class="pure-control-group">
+        <label for="updBiography">Biography: </label>
+        <textarea id="updBiography" name="biography">This is my biography...</textarea>
+      </div>
+      <div class="pure-controls">
+        <p><button class="btn bTn" type="submit" name="commit">Save</button>
+           <button class="btn bTn" type="button" onclick="pl.view.authors.manage.refreshUI()">Back to menu</button></p>
+      </div>
+    </form>
+  </div>
+<!-- ======================================================= -->
+  <div id="deleteAuthor">
+<!-- ======================================================= -->
+    <h1 class="t-a-c">Delete a author record</h1><hr>
+    <form id="deleteAuthorForm" class="pure-form pure-form-aligned">
+      <div class="pure-control-group">
+        <label for="delAuthorSelectAuthor">Select author: </label>
+        <select id="delAuthorSelectAuthor" name="selectAuthor"><option value=""> --- </option></select>
+      </div>
+      <div class="pure-controls">
+        <p><button class="btn bTn" type="button" name="commit">Delete</button>
+           <button class="btn" type="button" onclick="pl.view.authors.manage.refreshUI()">Back to menu</button></p>
+      </div>
+    </form>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="css/tether-1.3.1/dist/js/tether.min.js" ></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+  <script src="lib/browserShims.js"></script>
+  <script src="lib/util.js"></script>
+  <script src="src/model/errorTypes.js"></script>
+  <script src="src/model/Person.js"></script>
+  <script src="src/model/Employee.js"></script>
+  <script src="src/model/Author.js"></script>
+  <script src="src/ctrl/app.js"></script>
+  <script src="src/view/app.js"></script>
+  <script src="src/view/authors.js"></script>
+  <script src="src/ctrl/authors.js"></script>
+  <script>
+    window.addEventListener("load", pl.ctrl.authors.manage.initialize);
+  </script>
+  </body>
+</html>

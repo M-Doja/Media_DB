@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Minimal JS Front-End App Example</title>
+  <script src="src/ctrl/initialize.js"></script>
+  <script src="src/model/Movie.js"></script>
+  <script src="src/view/updateMovie.js"></script>
+  <script>
+   window.addEventListener("load", pl.view.updateMovie.setupUserInterface);
+  </script>
+</head>
+<body>
+  <h1>Public Library: Update a book record</h1>
+  <form id="Movie" action="">
+    <p>
+      <label>Select book:
+        <select name="selectMovie"><option value=""> --- </option></select>
+      </label>
+    </p>
+    <p><label>ISBN: <output name="isbn" /></label></p>
+    <p><label>Title: <input name="title" /></label></p>
+    <p><label>Year: <input name="year" /></label></p>
+    <p><button type="button" name="commit">Save Changes</button></p>
+  </form>
+  <nav><a href="./src/index.html">Back to main menu</a></nav>
+</body>
+</html>

@@ -1,0 +1,17 @@
+body {
+  padding: 0 10px;
+}
+
+/*================= NAVIGATION BUTTONS =================*/
+li {
+  list-style: none;
+}
+.nav-btn {
+  width: 200px;
+  margin: .375em auto;
+  color: #000;
+  right: 0;
+}
+menu {
+  margin-left: -40px;
+}

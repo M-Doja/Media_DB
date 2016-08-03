@@ -1,14 +1,66 @@
 <!DOCTYPE html>
-<html >
+<html>
+
 <head>
 	<title>coder-camps-js</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap_theme.min.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
 	<link rel="stylesheet" type="text/css" href="/css/site.css">
 </head>
-<body>
-	<h1>The App Works!</h1>
+
+<body class="text-center">
+	<h1></h1>
+
+	<h1>Home Media Collection</h1>
+	<h2>An Example of a Front-End JavaScript Home Movie Colletion App</h2>
+	<p>This app supports the following operations:</p>
+	<menu>
+		<li>
+			<a href="../listMovies.html">
+				<button class="nav-btn" type="button">
+					List all movies
+				</button>
+			</a>
+		</li>
+		<li>
+			<a href="../AddMovie.html">
+				<button class="nav-btn" type="button">
+					Add a new movie
+				</button>
+			</a>
+		</li>
+		<li>
+			<a href="../updateMovie.html">
+				<button class="nav-btn" type="button">
+					Update a movie
+				</button>
+			</a>
+		</li>
+		<li>
+			<a href="../deleteMovie.html">
+				<button class="nav-btn" type="button">
+					Delete a movie
+				</button>
+			</a>
+		</li>
+		<li>
+			<button class="nav-btn" type="button" onclick="Movie.clearData()">
+				Clear database
+			</button>
+		</li>
+		<li>
+			<button class="nav-btn" type="button" onclick="Movie.createTestData()">
+				Import Media
+			</button>
+		</li>
+	</menu>
+	<!-- SCRIPTS -->
+	<!-- <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script> -->
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 	<script src="/javascript/app.js"></script>
 </body>
+
 </html>
